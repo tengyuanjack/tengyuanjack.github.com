@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-18T08:28:29.780Z</updated>
+  <updated>2019-04-18T09:43:04.272Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/04/18/test-post/"/>
     <id>http://yoursite.com/2019/04/18/test-post/</id>
     <published>2019-04-18T08:27:48.000Z</published>
-    <updated>2019-04-18T08:28:29.780Z</updated>
+    <updated>2019-04-18T09:43:04.272Z</updated>
     
     <content type="html"><![CDATA[<p>This post is used for test.</p>]]></content>
     
@@ -35,6 +35,8 @@
     
     </summary>
     
+    
+      <category term="Test" scheme="http://yoursite.com/tags/Test/"/>
     
   </entry>
   
