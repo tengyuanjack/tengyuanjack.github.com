@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-24T12:17:49.685Z</updated>
+  <updated>2020-03-24T12:56:16.448Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>备忘录模式</title>
+    <link href="http://yoursite.com/2020/03/24/design_pattern/%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://yoursite.com/2020/03/24/design_pattern/备忘录模式/</id>
+    <published>2020-03-24T12:34:51.000Z</published>
+    <updated>2020-03-24T12:56:16.448Z</updated>
+    
+    <content type="html"><![CDATA[<p>行为型模式的一种，用于备份状态、屏蔽大对象中的属性等场景。</p><a id="more"></a><h3 id="【DP】定义"><a href="#【DP】定义" class="headerlink" title="【DP】定义"></a>【DP】定义</h3><p>在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。这样以后就可将该对象恢复到原先保存的状态。</p><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol><li>备份状态：当有状态转换时，出现状态转换失败时需要将状态回退回之前的状态，需要备份；</li><li>需要保存大对象中的一些个别属性，可以类似备忘录模式创建一个“小对象”来存储；</li><li>对外屏蔽大对象中的一些属性（只展示个别属性），可以类似备忘录模式创建一个“小对象”来展示。</li></ol><h3 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h3><p><img src="https://s2.ax1x.com/2020/02/07/1gnJMQ.png" alt="备忘录模式"></p><p>类图核心是备忘录类，以及外部保存类和备忘录类的聚合关系，即外部保存类对象可以保存多个备忘录对象。</p><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>多模式共同完成一件事：当执行撤销操作时，可以和命令模式一起使用。使用备忘录保存状态，命令模式中的行为请求者执行撤销命令。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;行为型模式的一种，用于备份状态、屏蔽大对象中的属性等场景。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>命令模式</title>
@@ -388,26 +406,6 @@
     <summary type="html">
     
       &lt;p&gt;创建型设计模式的一种&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>23种设计模式--享元模式</title>
-    <link href="http://yoursite.com/2019/04/04/design_pattern/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://yoursite.com/2019/04/04/design_pattern/享元模式/</id>
-    <published>2019-04-03T16:00:00.000Z</published>
-    <updated>2020-02-07T06:56:10.303Z</updated>
-    
-    <content type="html"><![CDATA[<p>结构型设计模式的一种，也叫轻量级模式，故英文名称叫FlyWeight</p><a id="more"></a><h3 id="【DP】定义"><a href="#【DP】定义" class="headerlink" title="【DP】定义"></a>【DP】定义</h3><p>运用共享技术有效地支持大量细粒度的对象。</p><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ol><li>使用大量的对象，并且这些对象会造成很大的存储开销时需要使用</li><li>对象大多数状态是外部状态，如果删除外部状态可以使用较少对象来表示，那么可以使用享元模式</li></ol><h3 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h3><p><img src="https://s2.ax1x.com/2020/02/07/1gncL9.png" alt="享元模式"></p><p>该类图的核心是工厂类，工厂类根据少量的内部状态来获取对象，当对象不存在时才创建。这样就能避免对象的创建数量，其实就是我们常说的“把对象缓存起来”。</p><h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>假设有一个按照模板打印的需求，这个需求的使用场景会是短时间内大量用户来打印。如果不对模板对象的数量进行控制，对内存是巨大的考验。使用享元模式设计如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 模板接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IPrintTemplate</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(User user)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 模板类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrintTemplate</span> <span class="keyword">implements</span> <span class="title">IPrintTemplate</span></span>&#123;</span><br><span class="line">    <span class="comment">// 模板名称（内部状态）</span></span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PrintTemplate</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// user是外部状态</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// print with user</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用户类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 工厂类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, IPrintTemplate&gt; printTemplateMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="comment">// 核心方法： 获取对象</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> IPrintTemplate <span class="title">getPrintTemplate</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!printTemplateMap.contains(name)) &#123;</span><br><span class="line">            printTemplateMap.put(name, <span class="keyword">new</span> PrintTemplate(name));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> printTemplateMap.get(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 客户端类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Factory factory = <span class="keyword">new</span> Factory();</span><br><span class="line">        IPrintTemplate template1 = factory.getPrintTemplate(<span class="string">"模板1"</span>);</span><br><span class="line">        template1.print(<span class="keyword">new</span> User(<span class="string">"用户1"</span>));</span><br><span class="line">        IPrintTemplate template2 = factory.getPrintTemplate(<span class="string">"模板1"</span>);</span><br><span class="line">        template2.print(<span class="keyword">new</span> User(<span class="string">"用户2"</span>));</span><br><span class="line">        IPrintTemplate template3 = factory.getPrintTemplate(<span class="string">"模板1"</span>);</span><br><span class="line">        template3.print(<span class="keyword">new</span> User(<span class="string">"用户3"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>客户端类表示三个不同用户使用同一个查询模板打印，此时只会生成一个模板对象，当模板对象比较占用内存时能极大减少内存消耗。</p><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol><li>类图中的非共享对象是为了表示不是接口的所有实现类都必须共享</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;结构型设计模式的一种，也叫轻量级模式，故英文名称叫FlyWeight&lt;/p&gt;
     
     </summary>
     
